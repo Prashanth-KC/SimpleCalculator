@@ -10,4 +10,22 @@
             screen.value += value;
         })
     });
+
+    clear.addEventListener('click', function (e) {
+        screen.value = "";
+    });
+
+    equal.addEventListener('click', function (e) {
+        try {
+            if (screen.value === '') {
+                screen.value = "";
+            } else {
+                let answer = eval(screen.value);
+                screen.value = answer;
+            }
+        } catch (error) {
+            screen.value = "Error: " + error.message;
+        }
+    })
+
 })();
